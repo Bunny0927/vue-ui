@@ -3,7 +3,8 @@ import Vue from 'vue';
 import { Button } from "./components/Button";
 Vue.config.productionTip = false;
 
-const install = function (Vue, options = {}) {
+// const install = function (Vue, options = {}) {
+    const install = function (Vue) {  
     Vue.use(Button);
 };
 
