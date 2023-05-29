@@ -1,6 +1,6 @@
 module.exports = {
-    title: '组件库文档',
-    description: '基于vue的组件库',
+    title: 'Vue-ui组件库',
+    description: '基于vue2的组件库',
     base: '/',
     markdown: {
         lineNumbers: true
@@ -33,7 +33,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'basic/button',
-                        // 'basic/dialog',
+                        'basic/dialog',
                     ]
                 },
                 {
