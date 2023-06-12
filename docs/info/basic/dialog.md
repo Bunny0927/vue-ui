@@ -47,17 +47,17 @@
 ::: demo
 
 ```html
-
-
-    <my-button type="primarygold" @click="visiable1 = true"
+<template>
+  <div>
+    <my-button type="primarygold" @click="visiable = true"
       >对话框dialog2
     </my-button>
-    <my-dialog title="Vue-ui提示您" :visiable.sync="visiable1">
+    <my-dialog title="Vue-ui提示您" :visiable.sync="visiable">
       <!-- .sync等同于 visiable="false" @update:visable,false -->
       你好，欢迎使用Vue-ui组件库
     </my-dialog>
   </div>
-
+</template>
 
 <script>
   export default {
@@ -65,14 +65,81 @@
     data() {
       return {
         visiable: false,
-        visiable1: false,
       };
     },
   };
 </script>
 ```
-
 :::
+
+### 居中布局
+::: demo
+
+```html
+<template>
+  <div>
+    <my-button type="primarygold" @click="visiable = true"
+      >对话框dialog3
+    </my-button>
+    <my-dialog title="Vue-ui提示您" :visiable.sync="visiable" center>
+      你好，欢迎使用Vue-ui组件库
+      <template v-slot:footer>
+        <my-button type="primarygold" @click="visiable = false" mimicry
+          >确定</my-button
+        >
+        <my-button @click="visiable = false">取消</my-button>
+      </template>
+    </my-dialog>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        visiable: false,
+      };
+    },
+  };
+</script>
+```
+:::
+
+### 自定义内容
+::: demo
+
+```html
+<template>
+  <div>
+    <my-button type="primarygold" @click="visiable = true">对话框dialog4</my-button>
+    <my-dialog title="Vue-ui提示您" :visiable.sync="visiable">
+      <my-button type="primarygold" @click="visiable = false">自定义内容</my-button>
+      <template v-slot:footer>
+        <my-button type="primarygold" @click="visiable = false" mimicry
+          >确定</my-button
+        >
+        <my-button @click="visiable = false">取消</my-button>
+      </template>
+    </my-dialog>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        visiable: false,
+      };
+    },
+  };
+</script>
+```
+:::
+
+
+
 
 ### Attributes
 
@@ -83,3 +150,4 @@
 | v-slot   | slot   | 给对话框添加开关按钮          |
 | width    | String | dialog 宽度                   |
 | top      | String | dialog 与上页的距离           |
+| center   |        | 标题和底部水平居中             |

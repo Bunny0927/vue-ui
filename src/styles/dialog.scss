@@ -23,18 +23,27 @@
     border: 5px solid $primary-color;
     box-sizing: border-box;
     &--header {
-      padding: 20px 20px 10px;
-      display: flex;
-      justify-content: space-between;
+      padding: 0 0 20px 20px;
+      height: 50px;
+      // display: flex;
+      // justify-content: space-around;
+      position: relative;
       .my-dialog--title {
-
+        display: block;
+        padding-top: 10px;
         font-family: "jiangxizhuokai";
         line-height: 24px;
         font-size: 22px;
         color: $primary-color;
       }
+      .my-dialog--title.center {
+        text-align: center;
+      }
       .my-dialog--headerbtn {
-        padding: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
         background: transparent;
         border: none;
         outline: none;
@@ -60,6 +69,9 @@
       ::v-deep .my-button:first-child {
         margin-right: 20px;
       }
+    }
+    .my-dialog--footer.center {
+      text-align: center;
     }
   }
   // 拟态风格

@@ -14,21 +14,19 @@
         <div class="my-dialog--header">
           <!-- slot包裹title 如果插入填入了title那么内部的值就会被替换为slot-->
           <slot name="title">
-            <span class="my-dialog--title">{{ title }}</span>
+            <span :class="['my-dialog--title', { center: center }]">{{ title }}</span>
           </slot>
-          <!-- 有问题 -->
-          <!-- <my-Button
-            circle
-            :icon="['far', 'times-circle']"
+          <my-button
+            icon="icon-close"
             class="my-dialog--headerbtn"
             @click="closeDialog"
-          ></my-Button> -->
+          ></my-button>
         </div>
         <div class="my-dialog--body">
           <!-- 默认插槽 -->
           <slot></slot>
         </div>
-        <div class="my-dialog--footer" v-if="$slots.footer">
+        <div :class="['my-dialog--footer', { center: center }]" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
       </div>
@@ -47,7 +45,6 @@ export default {
       this.$emit("update:visiable", false); //传递给父组件，然后再传回来
     },
   },
-  components: {},
   props: {
     title: {
       type: String,
@@ -68,6 +65,9 @@ export default {
     mimicry: {
       type: Boolean,
       default: false,
+    },
+    center: {
+      type: Boolean,
     },
   },
 };
