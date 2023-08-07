@@ -3,6 +3,7 @@ import Vue from 'vue';
 import { Button } from "./components/Button";
 import { Dialog } from "./components/Dialog";
 import { Input } from "./components/Input";
+import { Form } from "./components/Form";
 Vue.config.productionTip = false;
 
 // const install = function (Vue, options = {}) {
@@ -10,6 +11,7 @@ Vue.config.productionTip = false;
     Vue.use(Button);
     Vue.use(Dialog);
     Vue.use(Input);
+    Vue.use(Form);
 };
 
 export default install;

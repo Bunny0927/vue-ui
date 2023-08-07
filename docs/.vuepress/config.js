@@ -47,6 +47,7 @@ module.exports = {
                     title: 'Form表单组件',
                     collapsable: false,
                     children: [
+                        'form/form',
                         'form/input'
                     ]
                 },

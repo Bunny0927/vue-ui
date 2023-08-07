@@ -108,9 +108,11 @@ export default {
       this.currentValue = value;
       // 子组件调用handleInput时，触发父组件的input事件，将value传递给父组件
       this.$emit("input", value); 
-      this.dispatch('my-form-item','form-change',value)
+      // 通过dispatch向上查找父组件，找到my-form-item组件，触发form-change事件,将value传递给父组件
+      this.dispatch('my-form-item','form-change',value) 
     },
     handleBlur(){
+      // 通过dispatch向上查找父组件，找到my-form-item组件，触发form-blur事件,将value传递给父组件
       this.dispatch('my-form-item','form-blur',this.currentValue);
     },
     changeyes() {
