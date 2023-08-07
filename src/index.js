@@ -6,8 +6,7 @@ import { Input } from "./components/Input";
 import { Form } from "./components/Form";
 Vue.config.productionTip = false;
 
-// const install = function (Vue, options = {}) {
-    const install = function (Vue) {  
+const install = function (Vue) {  
     Vue.use(Button);
     Vue.use(Dialog);
     Vue.use(Input);
