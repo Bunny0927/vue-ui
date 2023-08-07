@@ -25,7 +25,8 @@
     "eslint-plugin-vue": "^8.0.3",
     "vue-template-compiler": "^2.6.14",
     "vuepress": "^1.9.9",
-    "vuepress-plugin-demo-container": "^0.2.0"
+    "vuepress-plugin-demo-container": "^0.2.0",
+    "webpack": "^4.46.0"
   },
   "eslintConfig": {
     "root": true,

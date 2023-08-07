@@ -43,14 +43,14 @@ module.exports = {
 
                     ]
                 },
-                {
-                    title: 'Form表单组件',
-                    collapsable: false,
-                    children: [
-                        'form/form',
-                        'form/input'
-                    ]
-                },
+                // {
+                //     title: 'Form表单组件',
+                //     collapsable: false,
+                //     children: [
+                //         'form/form',
+                //         'form/input'
+                //     ]
+                // },
                 {
                     title: 'Table表格组件',
                     collapsable: false,
