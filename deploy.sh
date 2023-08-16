@@ -17,7 +17,7 @@ git add -A
 git commit -m 'deploy'
 
 # 如果你部署到 https://<USERNAME>.github.io
-git push -f git@github.com:Bunny0927/bunny0927.github.io.git master
+git push -f git@github.com:Bunny0927/vue-ui-deploy.git master
 
 # 如果你部署到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master

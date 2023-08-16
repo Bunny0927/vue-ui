@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Vue-ui组件库',
     description: '基于vue2的组件库',
-    base: '/',
+    base: '/',  //部署时为 ./
     markdown: {
         lineNumbers: true
     },
@@ -34,6 +34,8 @@ module.exports = {
                     children: [
                         'basic/button',
                         'basic/dialog',
+                        'basic/switch',
+                        'basic/message'
                     ]
                 },
                 {
@@ -43,14 +45,14 @@ module.exports = {
 
                     ]
                 },
-                // {
-                //     title: 'Form表单组件',
-                //     collapsable: false,
-                //     children: [
-                //         'form/form',
-                //         'form/input'
-                //     ]
-                // },
+                {
+                    title: 'Form表单组件',
+                    collapsable: false,
+                    children: [
+                        'form/form',
+                        'form/input'
+                    ]
+                },
                 {
                     title: 'Table表格组件',
                     collapsable: false,
