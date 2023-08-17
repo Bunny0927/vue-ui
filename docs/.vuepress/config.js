@@ -50,6 +50,7 @@ module.exports = {
                     children: [
                         'form/input',
                         'form/switch',
+                        'form/radio',
                         'form/form'
                     ]
                 },

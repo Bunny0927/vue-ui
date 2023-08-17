@@ -1,0 +1,26 @@
+//@import url(); 引入公共scss类
+@import "./common/color.scss";
+
+.radio {
+   font-family: "jiangxizhuokai";
+    padding: 5px;
+    display: inline-block;
+    .my-radio-primary {
+      display: flex;
+      align-items: center;
+      .my-radio {
+        width: 20px;
+        height: 20px;
+        &__disabled--true{
+          cursor: not-allowed;
+        }
+      }
+      .my-radio-label {
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+      .label-disabled{
+        color: #ccc;
+      }
+    }
+  }
