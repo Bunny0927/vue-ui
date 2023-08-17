@@ -133,5 +133,5 @@ export default {
 | placeholder | 输入框占位文本| string | ----- |   ""   |
 | value | 动态绑定的值 | string | ----- |   ""   |
 | cols | textarea 的列数 | string | ----- | "24" |
-| cols | textarea 的行数 | string | ----- | "2" |
+| rows | textarea 的行数 | string | ----- | "2" |
 
