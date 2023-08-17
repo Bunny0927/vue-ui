@@ -20,9 +20,9 @@ export default {
     name: "my-message",
     data() {
         return {
-        visible: false,
-        top: null,
-        onClose: null, //销毁的时候回调方法
+            visible: false,
+            top: null,
+            onClose: null, //销毁的时候回调方法
         };
     },
     props: {
@@ -51,6 +51,19 @@ export default {
             default: "",
         },
     },
+    mounted() {
+        setTimeout(() => {
+            this.visible = false;
+        }, this.time);
+    },
+    watch: {
+        // eslint-disable-next-line no-unused-vars
+        visible(newVal, oldVal) {
+            if (!newVal) {
+                this.closeMeth();
+            }
+        },
+    },
     methods: {
         destroyMeth() {
             this.$destroy(this.$el);
@@ -60,21 +73,8 @@ export default {
             if (typeof this.onClose == "function") {
                 this.onClose(this.id);
             }
-        },
-        watch: {
-            // eslint-disable-next-line no-unused-vars
-            visible(newVal, oldVal) {
-                if (!newVal) {
-                this.closeMeth();
-                }
-            },
-        },
-    },
-    mounted() {
-        setTimeout(() => {
-            this.visible = false;
-        }, this.time);
-    },
+        }
+    }
 };
 </script>
 <style lang="scss" scoped>

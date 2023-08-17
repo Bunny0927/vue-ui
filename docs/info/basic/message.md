@@ -7,10 +7,10 @@
  <script>
     export default{
         methods:{
-            messageOpenMeth(type){
+            messageOpenMeth(MSType){
                 this.$notice.open({
-                    title:'这是一条消息提示',
-                    type:type
+                    title: '这是一条消息提示',
+                    type: MSType
             })
         }
     }
