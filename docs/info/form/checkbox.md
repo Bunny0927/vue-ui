@@ -1,4 +1,4 @@
-# checkbox 复选框
+# Checkbox 复选框
 ::: tip 简介
 复选框
 :::

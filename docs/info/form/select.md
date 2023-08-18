@@ -1,4 +1,4 @@
-# select 下拉选择器
+# Select 下拉选择器
 
 ### 基本使用
 ::: demo
