@@ -1,0 +1,23 @@
+.checkbox {
+    padding: 5px;
+    display: inline-block;
+    font-family: "jiangxizhuokai";
+    .my-checkbox-primary {
+      display: flex;
+      align-items: center;
+      .my-checkbox {
+        width: 20px;
+        height: 20px;
+        &__disabled--true{
+          cursor: not-allowed;
+        }
+      }
+      .my-checkbox-label {
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+      .label-disabled{
+        color: #ccc;
+      }
+    }
+  }

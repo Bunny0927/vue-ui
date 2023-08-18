@@ -8,6 +8,7 @@ import { Switcher } from "./components/Switch";
 // import { Message } from './components/Message';
 import Message from "./components/Message";
 import {Radio,RadioButton,RadioGroup} from "./components/Radio";
+import {Checkbox,CheckboxGroup} from "./components/CheckBox"
 import './assets/iconfont/iconfont.css';
 // import './styles/index.scss';
 Vue.config.productionTip = false;
@@ -23,6 +24,8 @@ const install = function (Vue) {
     Vue.use(Radio);
     Vue.use(RadioButton);
     Vue.use(RadioGroup);
+    Vue.use(Checkbox);
+    Vue.use(CheckboxGroup);
     Vue.prototype.$notice = Message;
 
 };
@@ -39,5 +42,7 @@ export {
     Message,
     Radio,
     RadioButton,
-    RadioGroup
+    RadioGroup,
+    Checkbox,
+    CheckboxGroup
 };
