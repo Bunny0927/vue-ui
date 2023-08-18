@@ -52,6 +52,7 @@ module.exports = {
                         'form/switch',
                         'form/radio',
                         'form/checkbox',
+                        'form/select',
                         'form/form'
                     ]
                 },

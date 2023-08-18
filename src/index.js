@@ -7,8 +7,9 @@ import {Form,FormItem} from "./components/Form"
 import { Switcher } from "./components/Switch";
 // import { Message } from './components/Message';
 import Message from "./components/Message";
-import {Radio,RadioButton,RadioGroup} from "./components/Radio";
-import {Checkbox,CheckboxGroup} from "./components/CheckBox"
+import { Radio,RadioButton,RadioGroup } from "./components/Radio";
+import { Checkbox,CheckboxGroup } from "./components/CheckBox"
+import { Select,Option } from './components/Select';
 import './assets/iconfont/iconfont.css';
 // import './styles/index.scss';
 Vue.config.productionTip = false;
@@ -26,6 +27,8 @@ const install = function (Vue) {
     Vue.use(RadioGroup);
     Vue.use(Checkbox);
     Vue.use(CheckboxGroup);
+    Vue.use(Select);
+    Vue.use(Option);
     Vue.prototype.$notice = Message;
 
 };
@@ -44,5 +47,7 @@ export {
     RadioButton,
     RadioGroup,
     Checkbox,
-    CheckboxGroup
+    CheckboxGroup,
+    Select,
+    Option
 };
