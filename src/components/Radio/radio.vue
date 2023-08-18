@@ -29,7 +29,7 @@ export default {
   props: {
     label: {
       type: [String, Number, Boolean],
-      dafault: "",
+      default: "",
     },
     value: null,
     disabled: {
