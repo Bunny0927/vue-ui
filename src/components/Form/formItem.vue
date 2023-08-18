@@ -68,8 +68,8 @@ export default {
           if (rule.required !== undefined) this.isRequired = rule.required;
         });
       }
-      this.$on("form-blur", this.onFieldBlur);
-      this.$on("form-change", this.onFieldChange);
+      // this.$on("form-blur", this.onFieldBlur);
+      // this.$on("form-change", this.onFieldChange);
     },
     getRules() {
       let formRules = this.form.rules;
@@ -107,12 +107,12 @@ export default {
         this.form.model[this.prop] = this.initialValue;
       }
     },
-    onFieldBlur() {
-      this.validate("blur");
-    },
-    onFieldChange() {
-      this.validate("change");
-    },
+    // onFieldBlur() {
+    //   this.validate("blur");
+    // },
+    // onFieldChange() {
+    //   this.validate("change");
+    // },
   },
 };
 </script>
