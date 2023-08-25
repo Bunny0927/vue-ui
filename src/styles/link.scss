@@ -1,0 +1,88 @@
+@import "./common/color";
+.my-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.my-link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.my-link--default {
+    color: $font-gold-color;
+
+    &:hover,
+    &:focus {
+        color: $normal-active-color;
+    }
+}
+
+.my-link--default.underline {
+    border-bottom: 1px solid $font-gold-color;
+}
+
+.my-link--primary {
+    color: $primary-color ;
+
+    &:hover,
+    &:focus {
+        color: $primary-active-color ;
+    }
+}
+
+.my-link--primary.underline {
+    border-bottom: 1px solid $primary-color;
+}
+
+.my-link--success {
+    color: $success-color ;
+
+    &:hover,
+    &:focus {
+        color: $success-active-color ;
+    }
+}
+
+.my-link--success.underline {
+    border-bottom: 1px solid $success-color ;
+}
+
+.my-link--warning {
+    color: $warning-color;
+
+    &:hover,
+    &:focus {
+        color: $warning-active-color;
+    }
+}
+
+.my-link--warning.underline {
+    border-bottom: 1px solid $warning-color;
+}
+
+.my-link--danger {
+    color: $danger-color;
+
+    &:hover,
+    &:focus {
+        color: $danger-active-color ;
+    }
+}
+
+.my-link--danger.underline {
+    border-bottom: 1px solid $danger-color;
+}
+
+.my-link--info {
+    color: $info-color;
+
+    &:hover,
+    &:focus {
+        color: $info-active-color ;
+    }
+}
+
+.my-link--info.underline {
+    border-bottom: 1px solid $info-color;
+}

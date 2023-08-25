@@ -34,7 +34,8 @@ module.exports = {
                     children: [
                         'basic/button',
                         'basic/dialog',
-                        'basic/message'
+                        'basic/link',
+                        // 'basic/message'
                     ]
                 },
                 {
