@@ -42,6 +42,15 @@ export default {
   updated() {
     this.updatedChildren();
   },
+  // 或者也可以使用watch
+  // watch: {
+  //   selected: {
+  //     deep: true, // 监听对象内部的变化
+  //     handler() {
+  //       this.updatedChildren(); // 调用更新选中状态的函数
+  //     },
+  //   },
+  // },
   methods: {
     addItem(vm) {
       //告诉祖先组件到底是谁被选中了
@@ -62,7 +71,7 @@ export default {
       this.items.forEach((vm) => {
         vm.$on("add:selected", (name) => {
           if (this.multiple) {
-            //如果是多选则穿入多个激活
+            //如果是多选则传入多个激活
             if (this.selected.indexOf(name) < 0) {
               //不在数组里
               //单纯的push不行,因为有可能在里面了
