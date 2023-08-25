@@ -11,8 +11,8 @@
 <div id="app">
   <my-nav :selected.sync="selected" style="margin: 20px 0 0 20px;">
     <my-nav-item name="home">首页</my-nav-item>
-    <my-nav-item name="hi1re">测试</my-nav-item>
-    <my-nav-item name="123">按钮</my-nav-item>
+    <my-nav-item name="test">测试</my-nav-item>
+    <my-nav-item name="btn">按钮</my-nav-item>
   </my-nav>
 </div>
 <script>
@@ -21,7 +21,7 @@
 
     data() {
       return {
-        selected: ["culture"],
+        selected: ["test"],
       };
     },
   };
@@ -42,8 +42,8 @@
     style="width: 200px; margin: 20px 0 0 20px;"
   >
     <my-nav-item name="home">首页</my-nav-item>
-    <my-nav-item name="hire">测试</my-nav-item>
-    <my-nav-item name="22">你好</my-nav-item>
+    <my-nav-item name="test">测试</my-nav-item>
+    <my-nav-item name="hello">你好</my-nav-item>
   </my-nav>
 </div>
 
@@ -53,7 +53,7 @@
 
     data() {
       return {
-        selected: ["culture"],
+        selected: ["test"],
       };
     },
   };

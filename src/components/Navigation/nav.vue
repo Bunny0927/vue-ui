@@ -42,13 +42,6 @@ export default {
   updated() {
     this.updatedChildren();
   },
-  computed: {
-    // items() { item可以不用计算出来了
-    //   return this.$children.filter(
-    //     (vm) => vm.$options.name === "my-nav-item"
-    //   );
-    // },
-  },
   methods: {
     addItem(vm) {
       //告诉祖先组件到底是谁被选中了
@@ -92,5 +85,3 @@ export default {
 @import "../../styles/totalnav.scss";
 @import "../../styles/common/color";
 </style>
-
-
