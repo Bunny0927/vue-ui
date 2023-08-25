@@ -41,7 +41,8 @@ module.exports = {
                     title: 'Navigation导航',
                     collapsable: false,
                     children: [
-
+                        'navigation/nav',
+                        'navigation/navItem'
                     ]
                 },
                 {

@@ -10,8 +10,9 @@ import Message from "./components/Message";
 import { Radio,RadioButton,RadioGroup } from "./components/Radio";
 import { Checkbox,CheckboxGroup } from "./components/CheckBox"
 import { Select,Option } from './components/Select';
+import { Nav, NavItem } from './components/Navigation';
 import './assets/iconfont/iconfont.css';
-// import './styles/index.scss';
+import './styles/index.scss';
 Vue.config.productionTip = false;
 
 const install = function (Vue) {  
@@ -29,6 +30,8 @@ const install = function (Vue) {
     Vue.use(CheckboxGroup);
     Vue.use(Select);
     Vue.use(Option);
+    Vue.use(Nav);
+    Vue.use(NavItem);
     Vue.prototype.$notice = Message;
 
 };
@@ -49,5 +52,7 @@ export {
     Checkbox,
     CheckboxGroup,
     Select,
-    Option
+    Option,
+    Nav,
+    NavItem
 };
