@@ -1,6 +1,6 @@
 diff a/src/styles/message.scss b/src/styles/message.scss	(rejected hunks)
 @@ -1,69 +0,0 @@
--.emui-message {
+-.my-message {
 -  width: 380px;
 -  -webkit-box-sizing: border-box;
 -  box-sizing: border-box;
@@ -39,34 +39,34 @@ diff a/src/styles/message.scss b/src/styles/message.scss	(rejected hunks)
 -  transition: opacity 0.5s, transform 0.5s;
 -}
 -
--.emui-message--success {
+-.my-message--success {
 -  background-color: #f0f9eb;
 -  border-color: #e1f3d8;
 -}
 -
--.emui-message--success .emui-message__content {
+-.my-message--success .my-message__content {
 -  color:  rgba(50, 136, 143, 0.2);
 -}
 -
--.emui-message--warning {
+-.my-message--warning {
 -  background-color: #fdf6ec;
 -  border-color: #faecd8;
 -}
 -
--.emui-message--warning .emui-message__content {
+-.my-message--warning .my-message__content {
 -  color: rgba(219, 207, 33, 0.44);
 -}
 -
--.emui-message--error {
+-.my-message--error {
 -  background-color: #fef0f0;
 -  border-color: #fde2e2;
 -}
 -
--.emui-message--error .emui-message__content {
+-.my-message--error .my-message__content {
 -  color:  rgba(230, 48, 48, 0.22);
 -}
 -
--.emui-message--info .emui-message__content {
+-.my-message--info .my-message__content {
 -  color: rgba(101, 143, 50, 0.2);
 -}
 \ No newline at end of file

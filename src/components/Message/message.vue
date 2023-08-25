@@ -10,7 +10,6 @@
       <div class="title">
         {{ title }}
       </div>
-      <!--      <i class="icon iconfont icon-guanbi close-btn" @click="closeMeth"></i>-->
     </div>
   </transition>
 </template>
@@ -66,8 +65,11 @@ export default {
     },
     methods: {
         destroyMeth() {
-            this.$destroy(this.$el);
-            this.$el.parentNode.removeChild(this.$el);
+            this.$nextTick(() => {
+               this.$el.parentNode.removeChild(this.$el);
+                this.$destroy(this.$el); 
+            });
+             
         },
         closeMeth() {
             if (typeof this.onClose == "function") {
