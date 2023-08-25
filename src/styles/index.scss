@@ -1,9 +1,21 @@
-@import "button";
-@import "icon";
-@import "./common/font.scss";
+@import "./button";
+@import "./input";
+@import "./radio";
+@import "./checkbox";
+@import "./select";
+@import "./icon";
+@import "./message";
+@import './nav.scss';
+@import './totalnav.scss';
+@import './subnav.scss';
+@import './navitem.scss';
+@import "./common/color.scss";
+@import "./common/animation.scss";
+// @import "./common/font.scss";
 @import "./dialog.scss";
 
-@font-face {
-  font-family: jiangxizhuokai;
-  src: url("../assets/font/江西拙楷.ttf");
-};
+
+// @font-face {
+//   font-family: jiangxizhuokai;
+//   src: url("../assets/font/江西拙楷.ttf");
+// };
