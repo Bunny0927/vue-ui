@@ -11,6 +11,7 @@ import { Checkbox,CheckboxGroup } from "./components/CheckBox"
 import { Select,Option } from './components/Select';
 import { Nav, NavItem } from './components/Navigation';
 import {Link} from "./components/Link";
+import {Table} from './components/Table';
 import './assets/iconfont/iconfont.css';
 import './styles/index.scss';
 Vue.config.productionTip = false;
@@ -33,6 +34,7 @@ const install = function (Vue) {
     Vue.use(Nav);
     Vue.use(NavItem);
     Vue.use(Link);
+    Vue.use(Table);
     Vue.prototype.$notice = Message;
 
 };
@@ -56,5 +58,6 @@ export {
     Option,
     Nav,
     NavItem,
-    Link
+    Link,
+    Table
 };

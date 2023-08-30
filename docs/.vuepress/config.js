@@ -62,7 +62,7 @@ module.exports = {
                     title: 'Table表格组件',
                     collapsable: false,
                     children: [
-
+                        'table/table'
                     ]
                 }
             ],
