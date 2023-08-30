@@ -19,7 +19,8 @@ export default {
     };
   },
   created() {
-    this.root.addItem(this); //可以直接操作祖先，非常耦合,  直接告诉祖先组件我是你的后代
+    if(this.root !== undefined && this.root.addItem !== undefined)
+      this.root.addItem(this); //可以直接操作祖先，非常耦合,  直接告诉祖先组件我是你的后代
   },
   methods: {
     onClick() {
