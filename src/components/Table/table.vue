@@ -1,7 +1,7 @@
 <template>
   <div class="table" ref="wrapper">
     <div
-      :style="{ height:height+'px', overflow: 'auto' }"
+      :style="{ height: height + 'px', overflow: 'auto' }"
       ref="tableWrapper"
       class="tableWrapper"
     >
@@ -25,11 +25,11 @@
             <th
               v-for="column in columns"
               :key="column.filed"
-              :style="{ width: column.width+'px' }"
+              :style="{ width: column.width + 'px' }"
             >
               <div class="table-column">
                 {{ column.text }}
-                <span
+                <!-- <span
                   class="table-sort"
                   v-if="column.filed in orderBy"
                   @click="changeOrderBy(column.filed)"
@@ -42,38 +42,44 @@
                     class="iconfont icon-sort-down"
                     :class="{ active: orderBy[column.filed] === 'desc' }"
                   ></span>
-                </span>
+                </span> -->
               </div>
             </th>
           </tr>
         </thead>
         <tbody>
-          <template v-for="(item, index) in data" >
-           <tr :key="item.id">
-            <td style="width: 50px">
-             <span class="iconfont icon-xiangyou1 my-table-expend-icon" :class="{'my-table-expend-icon-active':inExpendIds(item.id)}" @click="expendItem(item.id)"></span>
-            </td>
-            <td v-if="numberVisible" style="width: 50px">{{ index }}</td>
-            <td style="width: 50px" v-if="selected" class="my-table-center">
-              <input
-                type="checkbox"
-                @change="onChangeItem($event, item)"
-                :checked="
-                  selectedItems.filter((i) => i.id == item.id).length > 0
-                "
-              />
-            </td>
-            <template v-for="column in columns">
-              <td :key="column.filed" :style="{ width: column.width+'px' }">
-                {{ item[column.filed] }}
+          <template v-for="(item, index) in data">
+            <tr :key="item.id">
+              <td style="width: 50px">
+                <span
+                  class="iconfont icon-xiangyou1 my-table-expend-icon"
+                  :class="{
+                    'my-table-expend-icon-active': inExpendIds(item.id),
+                  }"
+                  @click="expendItem(item.id)"
+                ></span>
               </td>
-            </template>
-          </tr>
-          <tr :key="`${item.id}-expend`" v-if="inExpendIds(item.id)">
-            <td :colspan="columns.length+1">
-               {{item[expendFiled]||'null'}}
-            </td>
-          </tr>
+              <td v-if="numberVisible" style="width: 50px">{{ index }}</td>
+              <td style="width: 50px" v-if="selected" class="my-table-center">
+                <input
+                  type="checkbox"
+                  @change="onChangeItem($event, item)"
+                  :checked="
+                    selectedItems.filter((i) => i.id == item.id).length > 0
+                  "
+                />
+              </td>
+              <template v-for="column in columns">
+                <td :key="column.filed" :style="{ width: column.width + 'px' }">
+                  {{ item[column.filed] }}
+                </td>
+              </template>
+            </tr>
+            <tr :key="`${item.id}-expend`" v-if="inExpendIds(item.id)">
+              <td :colspan="columns.length + 1">
+                {{ item[expendFiled] || "null" }}
+              </td>
+            </tr>
           </template>
         </tbody>
       </table>
@@ -100,18 +106,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    selected:{
-      type:Boolean,
-      default:false
+    selected: {
+      type: Boolean,
+      default: false,
     },
     height: {
       type: [Number, String],
       default: "",
     },
-    expendFiled:{
+    expendFiled: {
       //可展开行的具体描述
-      type:String,
-      default:''
+      type: String,
+      default: "",
     },
     selectedItems: {
       type: Array,
@@ -141,36 +147,36 @@ export default {
       type: Boolean,
       default: true,
     },
-    orderBy: {
-      //排序规则
-      type: Object,
-      default: () => {},
-    },
+    // orderBy: {
+    //   //排序规则
+    //   type: Object,
+    //   default: () => {},
+    // },
   },
   data() {
     return {
       table2: "",
-      expendIds:[],  //存放可展开元素的id
-      tableHeader2:''
+      expendIds: [], //存放可展开元素的id
+      tableHeader2: "",
     };
   },
-  mounted() {
-    //将页面原有的table复制一份
-    let table2 = this.$refs.table.cloneNode(false);
-    table2.classList.add("my-table-copy");
-    this.table2=table2;
-    this.$refs.wrapper.appendChild(table2)
-    let tHead = this.$refs.table.children[0];
-    const { height } = tHead.getBoundingClientRect();
-    this.$refs.table.style.marginTop=height+'px';
-    this.updateHeadersWidth();
-    this.onWindowResize = () => this.updateHeadersWidth();
-    window.addEventListener("resize", this.onWindowResize); //监听页面宽度发生变化，随时调整tableheader宽度
-  },
-  beforeDestroy() {
-    this.table2.remove();
-    window.removeEventListener("resize", this.onWindowResize);
-  },
+  // mounted() {
+  //   //将页面原有的table复制一份
+  //   let table2 = this.$refs.table.cloneNode(false);
+  //   table2.classList.add("my-table-copy");
+  //   this.table2 = table2;
+  //   this.$refs.wrapper.appendChild(table2);
+  //   let tHead = this.$refs.table.children[0];
+  //   const { height } = tHead.getBoundingClientRect();
+  //   this.$refs.table.style.marginTop = height + "px";
+  //   this.updateHeadersWidth();
+  //   this.onWindowResize = () => this.updateHeadersWidth();
+  //   window.addEventListener("resize", this.onWindowResize); //监听页面宽度发生变化，随时调整tableheader宽度
+  // },
+  // beforeDestroy() {
+  //   this.table2.remove();
+  //   window.removeEventListener("resize", this.onWindowResize);
+  // },
   watch: {
     selectedItems() {
       if (
@@ -201,19 +207,23 @@ export default {
     },
   },
   methods: {
-    updateHeadersWidth() {
-     const { width } = this.$refs.table.getBoundingClientRect();
-     this.table2.style.width = width + "px";
-     let table2=this.table2
-     let tableHeader=Array.from(this.$refs.table.children).filter(node=>node.tagName.toLowerCase()=='thead')[0]
-     let tableBody=Array.from(this.$refs.table.children).filter(node=>node.tagName.toLowerCase()=='tbody')[0]
-     table2.appendChild(tableHeader)
-      Array.from(tableBody.children[0].children).map((th,i)=>{
-        const {width}=th.getBoundingClientRect();
-        table2.children[0].children[0].children[i].style.width=width+'px';
-      })
-    },
-     onChangeItem(e, item) {
+    // updateHeadersWidth() {
+    //   const { width } = this.$refs.table.getBoundingClientRect();
+    //   this.table2.style.width = width + "px";
+    //   let table2 = this.table2;
+    //   let tableHeader = Array.from(this.$refs.table.children).filter(
+    //     (node) => node.tagName.toLowerCase() == "thead"
+    //   )[0];
+    //   let tableBody = Array.from(this.$refs.table.children).filter(
+    //     (node) => node.tagName.toLowerCase() == "tbody"
+    //   )[0];
+    //   table2.appendChild(tableHeader);
+    //   Array.from(tableBody.children[0].children).map((th, i) => {
+    //     const { width } = th.getBoundingClientRect();
+    //     table2.children[0].children[0].children[i].style.width = width + "px";
+    //   });
+    // },
+    onChangeItem(e, item) {
       let selected = e.target.checked;
       let copy = JSON.parse(JSON.stringify(this.selectedItems));
       if (selected) {
@@ -231,29 +241,29 @@ export default {
         this.$emit("update:selectedItems", []);
       }
     },
-    changeOrderBy(key) {
-      const copy = JSON.parse(JSON.stringify(this.orderBy));
-      let oldValue = copy[key];
-      if (oldValue == "asc") {
-        copy[key] = "desc";
-      } else if (oldValue == "desc") {
-        copy[key] = true;
+    // changeOrderBy(key) {
+    //   const copy = JSON.parse(JSON.stringify(this.orderBy));
+    //   let oldValue = copy[key];
+    //   if (oldValue == "asc") {
+    //     copy[key] = "desc";
+    //   } else if (oldValue == "desc") {
+    //     copy[key] = true;
+    //   } else {
+    //     copy[key] = "asc";
+    //   }
+    //   this.$emit("update:orderBy", copy);
+    // },
+    expendItem(id) {
+      if (this.inExpendIds(id)) {
+        this.expendIds.splice(this.expendIds.indexOf(id), 1);
       } else {
-        copy[key] = "asc";
+        this.expendIds.push(id);
       }
-      this.$emit("update:orderBy", copy);
     },
-    expendItem(id){
-      if(this.inExpendIds(id)){
-        this.expendIds.splice(this.expendIds.indexOf(id),1);
-      }else{
-         this.expendIds.push(id);
-      } 
+    inExpendIds(id) {
+      return this.expendIds.indexOf(id) >= 0;
     },
-    inExpendIds(id){
-      return this.expendIds.indexOf(id)>=0
-    }
-    },
-  }
+  },
+};
 </script>
 
