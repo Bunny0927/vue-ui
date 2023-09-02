@@ -53,7 +53,6 @@ export default {
       expend-filed="description"
       height="200"
    ></my-table>   
-   <my-button @click = "shuchu()">点击</my-button>
 
 <script>
 export default {
