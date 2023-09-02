@@ -22,13 +22,13 @@
             <my-radio-button label="个人"></my-radio-button>
         </my-radio-group>
     </my-form-item>
-    <!-- <my-form-item label="活动性质" prop="datalist">
+    <my-form-item label="活动性质" prop="datalist">
         <my-checkbox-group v-model="activity.datalist">
             <my-checkbox label="品牌推广"></my-checkbox>
             <my-checkbox label="形象普及"></my-checkbox>
         </my-checkbox-group>
-    </my-form-item> -->
-    <!-- <my-form-item label="请选择" prop="myValue">
+    </my-form-item>
+    <my-form-item label="请选择" prop="myValue">
         <my-select v-model="activity.myValue" placeholder="请选择">
             <my-option
             v-for="item in options"
@@ -37,7 +37,7 @@
             :key="item.key"
             ></my-option>
         </my-select>
-    </my-form-item> -->
+    </my-form-item>
     <my-form-item>
         <my-button @click="handleSubmit">提交</my-button>
         <my-button @click="handleReset">重置</my-button>
@@ -49,11 +49,11 @@
         data(){
             return {
                 activity:{
-                    // datalist:[],
+                    datalist:[],
                     name:'',
                     address:'',
                     way:'',
-                    // myValue:'',
+                    myValue:'',
                 },
                  options: [
                     { key: "key1", label: "选项1" },
@@ -68,20 +68,21 @@
                     name: [{ required: true, message: "不能为空", trigger: "blur" }],
                     address: [{ required: true, message: "不能为空", trigger: "change" }],
                     way: [{ required: true, message: "不能为空", trigger: "change" }],
-                    // datalist: [
-                    //     {
-                    //         type: "array",
-                    //         required: true,
-                    //         message: "不能为空",
-                    //         trigger: "change",
-                    //     },
-                    // ],
-                    // myValue: [{ required: true, message: "至少选择一项" }],
+                    datalist: [
+                        {
+                            type: "array",
+                            required: true,
+                            message: "不能为空",
+                            trigger: "change",
+                        },
+                    ],
+                    myValue: [{ required: true, message: "至少选择一项" }],
                 },
             }
         },
          methods: {
             handleSubmit() {
+            console.log(this.activity)
             this.$refs.form.validate((valid) => {
                 if (valid) console.log("提交成功");
                 else console.log("校验失败");
